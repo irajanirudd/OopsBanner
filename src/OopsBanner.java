@@ -1,20 +1,23 @@
 public class OopsBanner {
 
-    // Main method to run the banner display
     public static void main(String[] args) {
 
-        // String array holding OOPS banner lines
+        System.out.println("OOPS Banner App - UC5\n");
+
+        // UC5: Inline Array Initialization with String.join()
         String[] banner = {
-                "  ***     ***     *****    **** ",
-                " *   *   *   *    *   *    *    ",
-                " *   *   *   *    *   *     *** ",
-                " *   *   *   *    *****        *",
-                " *   *   *   *    *        *   *",
-                " *   *   *   *    *        *   *",
-                "  ***     ***     *         *** "
+
+            String.join("   ", " ***** ", " ***** ", " ***** ", " ***** "),
+            String.join("   ", "*     *", "*     *", "*     *", "*      "),
+            String.join("   ", "*     *", "*     *", "*     *", "*      "),
+            String.join("   ", "*     *", "*     *", " ***** ", " ***** "),
+            String.join("   ", "*     *", "*     *", "*      ", "      *"),
+            String.join("   ", "*     *", "*     *", "*      ", "*     *"),
+            String.join("   ", " ***** ", " ***** ", "*      ", " ***** ")
+
         };
 
-        // Loop through array and print banner
+        // Enhanced For Loop to print banner
         for (String line : banner) {
             System.out.println(line);
         }
