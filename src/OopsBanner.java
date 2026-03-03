@@ -1,6 +1,7 @@
 public class OopsBanner{
     public static void main(String[] args){
-        System.out.println("Welcome to oops banner....");
+        // uc1
+        System.out.println("OOPS");
       
     }
 }
