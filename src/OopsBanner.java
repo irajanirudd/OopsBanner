@@ -1,44 +1,22 @@
 public class OopsBanner {
 
+    // Main method to run the banner display
     public static void main(String[] args) {
 
-        String[] O = {
-                " ***** ",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*     *",
-                "*     *",
-                " ***** "
+        // String array holding OOPS banner lines
+        String[] banner = {
+                "  ***     ***     *****    **** ",
+                " *   *   *   *    *   *    *    ",
+                " *   *   *   *    *   *     *** ",
+                " *   *   *   *    *****        *",
+                " *   *   *   *    *        *   *",
+                " *   *   *   *    *        *   *",
+                "  ***     ***     *         *** "
         };
 
-        String[] P = {
-                "****** ",
-                "*     *",
-                "*     *",
-                "****** ",
-                "*      ",
-                "*      ",
-                "*      "
-        };
-
-        String[] S = {
-                " ******",
-                "*      ",
-                "*      ",
-                " ***** ",
-                "      *",
-                "      *",
-                "****** "
-        };
-
-        // Print banner row by row
-        for (int i = 0; i < O.length; i++) {
-            System.out.println(String.join("   ",
-                    O[i],   // First O
-                    O[i],   // Second O
-                    P[i],   // P
-                    S[i])); // S
+        // Loop through array and print banner
+        for (String line : banner) {
+            System.out.println(line);
         }
     }
 }
