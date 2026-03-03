@@ -1,24 +1,44 @@
 public class OopsBanner {
+
     public static void main(String[] args) {
 
-        System.out.println("   ***   " + " " + "   ***   " + " " + "**" + "****" + "   " + " " + "  *****");
+        String[] O = {
+                " ***** ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                " ***** "
+        };
 
-        System.out.println(" **   ** " + " " + " **   ** " + " " + "**" + "    " + "** " + " " + " **");
+        String[] P = {
+                "****** ",
+                "*     *",
+                "*     *",
+                "****** ",
+                "*      ",
+                "*      ",
+                "*      "
+        };
 
-        System.out.println("**     **" + " " + "**     **" + " " + "**" + "    " + " **" + " " + "**");
+        String[] S = {
+                " ******",
+                "*      ",
+                "*      ",
+                " ***** ",
+                "      *",
+                "      *",
+                "****** "
+        };
 
-        System.out.println("**     **" + " " + "**     **" + " " + "**" + "    " + "** " + " " + " **");
-
-        System.out.println("**     **" + " " + "**     **" + " " + "**" + "****" + "   " + " " + "   ***");
-
-        System.out.println("**     **" + " " + "**     **" + " " + "**" + "    " + "   " + " " + "      **");
-
-        System.out.println("**     **" + " " + "**     **" + " " + "**" + "    " + "   " + " " + "        **");
-
-        System.out.println(" **   ** " + " " + " **   ** " + " " + "**" + "    " + "   " + " " + "       **");
-
-        System.out.println("   ***   " + " " + "   ***   " + " " + "**" + "    " + "   " + " " + "  *****");
-
+        // Print banner row by row
+        for (int i = 0; i < O.length; i++) {
+            System.out.println(String.join("   ",
+                    O[i],   // First O
+                    O[i],   // Second O
+                    P[i],   // P
+                    S[i])); // S
+        }
     }
-
 }
