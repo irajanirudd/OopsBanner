@@ -1,8 +1,36 @@
 public class OopsBanner {
 
-    // Method to return pattern of O
-    public static String getOPattern(int line) {
-        String[] O = {
+    /**
+     * Inner Static Class to store character and its banner pattern
+     */
+    static class CharacterPatternMap {
+
+        private char character;
+        private String[] pattern;
+
+        // Constructor
+        public CharacterPatternMap(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        // Getter for character
+        public char getCharacter() {
+            return character;
+        }
+
+        // Getter for pattern line
+        public String getPatternLine(int index) {
+            return pattern[index];
+        }
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("OOPS Banner App - UC7\n");
+
+        // Pattern for O
+        CharacterPatternMap O = new CharacterPatternMap('O', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -10,13 +38,10 @@ public class OopsBanner {
                 "*     *",
                 "*     *",
                 " ***** "
-        };
-        return O[line];
-    }
+        });
 
-    // Method to return pattern of P
-    public static String getPPattern(int line) {
-        String[] P = {
+        // Pattern for P
+        CharacterPatternMap P = new CharacterPatternMap('P', new String[]{
                 " ***** ",
                 "*     *",
                 "*     *",
@@ -24,13 +49,10 @@ public class OopsBanner {
                 "*      ",
                 "*      ",
                 "*      "
-        };
-        return P[line];
-    }
+        });
 
-    // Method to return pattern of S
-    public static String getSPattern(int line) {
-        String[] S = {
+        // Pattern for S
+        CharacterPatternMap S = new CharacterPatternMap('S', new String[]{
                 " ***** ",
                 "*      ",
                 "*      ",
@@ -38,27 +60,30 @@ public class OopsBanner {
                 "      *",
                 "*     *",
                 " ***** "
-        };
-        return S[line];
-    }
+        });
 
-    public static void main(String[] args) {
+        // Array of objects
+        CharacterPatternMap[] patterns = {O, O, P, S};
 
-        System.out.println("OOPS Banner App - UC6\n");
-
-        // Banner array populated using methods
         String[] banner = new String[7];
 
+        // Build banner using StringBuilder
         for (int i = 0; i < 7; i++) {
-            banner[i] = String.join("   ",
-                    getOPattern(i),
-                    getOPattern(i),
-                    getPPattern(i),
-                    getSPattern(i)
-            );
+
+            StringBuilder line = new StringBuilder();
+
+            for (int j = 0; j < patterns.length; j++) {
+                line.append(patterns[j].getPatternLine(i));
+
+                if (j < patterns.length - 1) {
+                    line.append("   ");
+                }
+            }
+
+            banner[i] = line.toString();
         }
 
-        // Enhanced for loop to print
+        // Print banner
         for (String line : banner) {
             System.out.println(line);
         }
